@@ -2,6 +2,8 @@ REVIEW 1 :
 Comment => "VariableNameShouldBeDescriptive"
 Suggested Names => elapsedTimeInDays, daysElapsed, elapsedDays
 
+-----------------------------------------------------------------------------------------------
+
 
 REVIEW 2 : 
 Comment => "NameOfDataBase and variable is generic"
@@ -10,12 +12,18 @@ Suggestion =>
 	2. employeesList or employees as variable name
 
 
+-----------------------------------------------------------------------------------------------
+
+
 REVIEW 3 :
 Comment => "NoNeedToMentionTypeInVariableName"
 Suggestion => 
 	1. counter
 	2. fullName
 	3. modifiedDate
+
+
+-----------------------------------------------------------------------------------------------
 
 
 REVIEW 4 :
@@ -27,6 +35,10 @@ public bool IsShopOpen(string day, int amount)
     // some logic
 }
 
+
+
+-----------------------------------------------------------------------------------------------
+
 REVIEW 5 :
 Comments =>
 	1. "PrivateVariableNamesShouldBeInCamleCase"
@@ -34,6 +46,8 @@ Comments =>
 	3. "ConsistencyShouldBeThereWithRespectToNamingConvetion"
 	4. Class Name should be in Pascal 
 
+
+-----------------------------------------------------------------------------------------------
 
 REVIEW 6 :
 Comments =>
@@ -46,6 +60,9 @@ public class Employee
     public Datetime StartWorkingDate { get; set; } // get set Start Working Date
     public Datetime ModificationTime { get; set; } // get set Modification Time
 }
+
+
+-----------------------------------------------------------------------------------------------
 
 
 REVIEW 7:

@@ -1,0 +1,94 @@
+
+REVIEW 1 :
+ 
+Comments => "Avoid redundant condition checks"
+Suggestion =>
+ 
+public bool IsShopOpen(string day)
+{
+    var openDays = new HashSet<string> { "friday", "saturday", "sunday" };
+    return !string.IsNullOrEmpty(day) && openDays.Contains(day.ToLower());
+}
+ 
+
+---------------------------------------------------------------------------------------------
+
+ 
+REVIEW 3 :
+ 
+Comments => "Avoid deep nesting and unnecessary checks"
+Suggestion =>
+Simplify the logic by handling base cases first.
+Remove magic number 50 and replace it with a named constant.
+ 
+private const int MAX_FIBONACCI = 50;
+public long Fibonacci(int n)
+{
+    if (n >= MAX_FIBONACCI)
+        throw new System.Exception("Not supported");
+ 
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+ 
+    return Fibonacci(n - 1) + Fibonacci(n - 2);
+}
+ 
+------------------------------------------------------------------------------------------------
+ 
+REVIEW 4 :
+ 
+Comments => Use meaningful variable names for better readability
+Suggestion =>
+Rename l to cities and li to city.
+Avoid .Count() in a loop condition as it has performance overhead and use a foreach loop to iterate 
+ 
+var cities = new[] { "Austin", "New York", "San Francisco" };
+foreach (var city in cities)
+{
+    DoStuff();
+    DoSomeOtherStuff();
+    // Other code...
+    Dispatch(city);
+}
+ 
+ -------------------------------------------------------------------------------------------
+ 
+REVIEW 5 :
+ 
+Comments => "Use named constants."
+Suggestion => Using a Constant
+ 
+const short AdminRole = 8;
+
+if (userRole == AdminRole)
+{
+    // Admin-specific logic here
+}
+ 
+---------------------------------------------------------------------------------------------
+ 
+REVIEW 6 :
+ 
+Comments => "Avoid redundant prefixes in property names"
+Suggestion =>
+Remove Car prefix from property names as they are already inside the Car class.
+ 
+public class Car
+{
+    public string Make { get; set; }
+    public string Model { get; set; }
+    public string Color { get; set; }
+}
+ 
+---------------------------------------------------------------------------------------------
+ 
+REVIEW 9 :
+ 
+Comments => "To ensure the name is neither null nor empty,combine the null-coalescing operator with a check for an empty string"
+Suggestion =>
+ 
+public void CreateMicrobrewery(string name = null)
+{
+    var breweryName = string.IsNullOrEmpty(name) ? "Hipster Brew Co." : name;
+    // ...
+}
