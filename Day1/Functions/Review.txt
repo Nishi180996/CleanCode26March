@@ -1,0 +1,80 @@
+
+
+REVIEW 2:
+
+Comments => Its a impure function. It's modifying the order.Total
+
+Suggestion => Return order.Total - discountAmount value directly
+
+public decimal DiscountAmount(Order order, decimal discountAmount)  
+{  
+    return order.total - discountAmount;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+REVIEW 3:
+
+Comments => Avoid negative conditionals, The method is checking if a node is not present. 
+            
+Suggestion =>
+The name can be simplified to better reflect this check, such as IsNodeAbsent, which would be clearer instead of negating IsDOMNodeNotPresent(node)
+
+public bool IsNodeAbsent(string node)
+{
+    // Check if node is absent
+}
+
+if (IsNodeAbsent(node))
+{
+    // Node is absent, perform action
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+REVIEW 5 :
+
+Comments => We should not check the type of object. 
+
+Suggestion => Let each specific vehicle implement the TravelTo method so that no type checking is required.We need to use polymorphism here
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+REVIEW 6 :
+
+Comments => Do not use flags , avoid that as parameter
+
+Suggestion =>
+Create two files CreateFile and CreateTempFile
+
+public void CreateFile(string name)
+{
+    Touch(filePath);
+}
+
+public void CreateTempFile(string name)
+{
+    Touch("./temp/" + name);
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+REVIEW 8:
+
+Comments => The method CreateMenu takes four parameters: title, body, buttonText, and cancellable.
+Methods with too many parameters are often considered a code smell because they can make the method harder to understand, maintain, and test.
+
+Suggestions => 
+Refactor the parameters into a single object
+ 
+public class Menu
+{
+    public string Title { get; set; }
+    public string Body { get; set; }
+    public string ButtonText { get; set; }
+    public bool Cancellable { get; set; }
+}
